@@ -1,0 +1,8 @@
+E:\NguyenDucAnh_CHTM518\IT 59\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.AssemblyReference.cache
+E:\NguyenDucAnh_CHTM518\IT 59\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fAccountProfile.resources
+E:\NguyenDucAnh_CHTM518\IT 59\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fAdmin.resources
+E:\NguyenDucAnh_CHTM518\IT 59\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fLogin.resources
+E:\NguyenDucAnh_CHTM518\IT 59\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fTableManager.resources
+E:\NguyenDucAnh_CHTM518\IT 59\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.Properties.Resources.resources
+E:\NguyenDucAnh_CHTM518\IT 59\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.GenerateResource.cache
+E:\NguyenDucAnh_CHTM518\IT 59\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.CoreCompileInputs.cache
