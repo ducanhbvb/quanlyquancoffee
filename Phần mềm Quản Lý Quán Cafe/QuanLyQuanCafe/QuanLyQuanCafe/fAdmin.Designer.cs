@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.USP_GetListBillByDateForReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.QuanLyQuanCafeDataSet2 = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new System.Windows.Forms.Button();
@@ -120,11 +118,9 @@
             this.btnFristBillPage = new System.Windows.Forms.Button();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.tcAdmin = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.USP_GetListBillByDateForReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QuanLyQuanCafeDataSet2 = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2();
             this.USP_GetListBillByDateForReportTableAdapter = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).BeginInit();
             this.tpAccount.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -165,17 +161,9 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.tcAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // USP_GetListBillByDateForReportBindingSource
-            // 
-            this.USP_GetListBillByDateForReportBindingSource.DataMember = "USP_GetListBillByDateForReport";
-            this.USP_GetListBillByDateForReportBindingSource.DataSource = this.QuanLyQuanCafeDataSet2;
-            // 
-            // QuanLyQuanCafeDataSet2
-            // 
-            this.QuanLyQuanCafeDataSet2.DataSetName = "QuanLyQuanCafeDataSet2";
-            this.QuanLyQuanCafeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tpAccount
             // 
@@ -1021,37 +1009,25 @@
             this.tcAdmin.Controls.Add(this.tbFoodCategory);
             this.tcAdmin.Controls.Add(this.tpTable);
             this.tcAdmin.Controls.Add(this.tpAccount);
-            this.tcAdmin.Controls.Add(this.tabPage1);
-            this.tcAdmin.Controls.Add(this.tabPage2);
             this.tcAdmin.Location = new System.Drawing.Point(12, 12);
             this.tcAdmin.Name = "tcAdmin";
             this.tcAdmin.SelectedIndex = 0;
             this.tcAdmin.Size = new System.Drawing.Size(658, 439);
             this.tcAdmin.TabIndex = 0;
             // 
-            // tabPage1
+            // USP_GetListBillByDateForReportBindingSource
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(650, 413);
-            this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "Report";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.USP_GetListBillByDateForReportBindingSource.DataMember = "USP_GetListBillByDateForReport";
+            this.USP_GetListBillByDateForReportBindingSource.DataSource = this.QuanLyQuanCafeDataSet2;
+            // 
+            // QuanLyQuanCafeDataSet2
+            // 
+            this.QuanLyQuanCafeDataSet2.DataSetName = "QuanLyQuanCafeDataSet2";
+            this.QuanLyQuanCafeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // USP_GetListBillByDateForReportTableAdapter
             // 
             this.USP_GetListBillByDateForReportTableAdapter.ClearBeforeFill = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(650, 413);
-            this.tabPage2.TabIndex = 6;
-            this.tabPage2.Text = "Báo cáo";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // fAdmin
             // 
@@ -1063,8 +1039,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.fAdmin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).EndInit();
             this.tpAccount.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
@@ -1119,6 +1093,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.tcAdmin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1214,12 +1190,11 @@
         private System.Windows.Forms.Button btnFristBillPage;
         private System.Windows.Forms.DataGridView dtgvBill;
         private System.Windows.Forms.TabControl tcAdmin;
-        private System.Windows.Forms.TabPage tabPage1;
         private Microsoft.Reporting.WinForms.ReportViewer rpViewer;
         private System.Windows.Forms.BindingSource USP_GetTableListBindingSource;
         private System.Windows.Forms.BindingSource USP_GetListBillByDateForReportBindingSource;
         private QuanLyQuanCafeDataSet2 QuanLyQuanCafeDataSet2;
         private QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter USP_GetListBillByDateForReportTableAdapter;
-        private System.Windows.Forms.TabPage tabPage2;
+        //privateBaoCaoDataSetTableAdapters.USP_GetListBillForReportTableAdapter USP_GetListBillForReportTableAdapter;
     }
 }
