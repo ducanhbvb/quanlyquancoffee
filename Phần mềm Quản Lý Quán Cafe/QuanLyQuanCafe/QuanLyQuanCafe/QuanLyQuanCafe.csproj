@@ -134,6 +134,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyQuanCafeDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="rptBaoCao.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBaoCao.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="fAccountProfile.resx">
       <DependentUpon>fAccountProfile.cs</DependentUpon>
@@ -161,6 +167,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="rptBaoCao.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBaoCao.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="BaoCaoDataSet.xsc">
       <DependentUpon>BaoCaoDataSet.xsd</DependentUpon>
     </None>

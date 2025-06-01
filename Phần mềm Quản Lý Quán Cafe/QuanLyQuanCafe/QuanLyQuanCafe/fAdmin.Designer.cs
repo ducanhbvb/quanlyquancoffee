@@ -57,7 +57,7 @@
             this.txbTableName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbTableID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.btnShowTable = new System.Windows.Forms.Button();
@@ -107,6 +107,7 @@
             this.dtgvFood = new System.Windows.Forms.DataGridView();
             this.tpBill = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_In_Bao_cao = new System.Windows.Forms.Button();
             this.btnViewBill = new System.Windows.Forms.Button();
             this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
@@ -384,6 +385,9 @@
             // cbTableStatus
             // 
             this.cbTableStatus.FormattingEnabled = true;
+            this.cbTableStatus.Items.AddRange(new object[] {
+            "Trống",
+            "Sử dụng"});
             this.cbTableStatus.Location = new System.Drawing.Point(125, 9);
             this.cbTableStatus.Name = "cbTableStatus";
             this.cbTableStatus.Size = new System.Drawing.Size(151, 21);
@@ -427,20 +431,20 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.textBox3);
+            this.panel14.Controls.Add(this.txbTableID);
             this.panel14.Controls.Add(this.label6);
             this.panel14.Location = new System.Drawing.Point(3, 3);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(279, 44);
             this.panel14.TabIndex = 1;
             // 
-            // textBox3
+            // txbTableID
             // 
-            this.textBox3.Location = new System.Drawing.Point(125, 8);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(151, 20);
-            this.textBox3.TabIndex = 1;
+            this.txbTableID.Location = new System.Drawing.Point(125, 8);
+            this.txbTableID.Name = "txbTableID";
+            this.txbTableID.ReadOnly = true;
+            this.txbTableID.Size = new System.Drawing.Size(151, 20);
+            this.txbTableID.TabIndex = 1;
             // 
             // label6
             // 
@@ -471,6 +475,7 @@
             this.btnShowTable.TabIndex = 3;
             this.btnShowTable.Text = "Xem";
             this.btnShowTable.UseVisualStyleBackColor = true;
+            this.btnShowTable.Click += new System.EventHandler(this.btnShowTable_Click);
             // 
             // btnEditTable
             // 
@@ -489,6 +494,7 @@
             this.btnDeleteTable.TabIndex = 1;
             this.btnDeleteTable.Text = "Xóa";
             this.btnDeleteTable.UseVisualStyleBackColor = true;
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // btnAddTable
             // 
@@ -498,6 +504,7 @@
             this.btnAddTable.TabIndex = 0;
             this.btnAddTable.Text = "Thêm";
             this.btnAddTable.UseVisualStyleBackColor = true;
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // panel20
             // 
@@ -609,6 +616,7 @@
             this.btnShowCategory.TabIndex = 3;
             this.btnShowCategory.Text = "Xem";
             this.btnShowCategory.UseVisualStyleBackColor = true;
+            this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
             // 
             // btnEditCategory
             // 
@@ -897,6 +905,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_In_Bao_cao);
             this.panel2.Controls.Add(this.btnViewBill);
             this.panel2.Controls.Add(this.dtpkToDate);
             this.panel2.Controls.Add(this.dtpkFromDate);
@@ -905,9 +914,19 @@
             this.panel2.Size = new System.Drawing.Size(638, 26);
             this.panel2.TabIndex = 1;
             // 
+            // btn_In_Bao_cao
+            // 
+            this.btn_In_Bao_cao.Location = new System.Drawing.Point(318, 0);
+            this.btn_In_Bao_cao.Name = "btn_In_Bao_cao";
+            this.btn_In_Bao_cao.Size = new System.Drawing.Size(75, 23);
+            this.btn_In_Bao_cao.TabIndex = 3;
+            this.btn_In_Bao_cao.Text = "In Báo Cáo";
+            this.btn_In_Bao_cao.UseVisualStyleBackColor = true;
+            this.btn_In_Bao_cao.Click += new System.EventHandler(this.btn_In_Bao_cao_Click);
+            // 
             // btnViewBill
             // 
-            this.btnViewBill.Location = new System.Drawing.Point(282, 0);
+            this.btnViewBill.Location = new System.Drawing.Point(237, 0);
             this.btnViewBill.Name = "btnViewBill";
             this.btnViewBill.Size = new System.Drawing.Size(75, 23);
             this.btnViewBill.TabIndex = 2;
@@ -1129,7 +1148,7 @@
         private System.Windows.Forms.TextBox txbTableName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbTableID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Button btnShowTable;
@@ -1195,6 +1214,7 @@
         private System.Windows.Forms.BindingSource USP_GetListBillByDateForReportBindingSource;
         private QuanLyQuanCafeDataSet2 QuanLyQuanCafeDataSet2;
         private QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter USP_GetListBillByDateForReportTableAdapter;
+        private System.Windows.Forms.Button btn_In_Bao_cao;
         //privateBaoCaoDataSetTableAdapters.USP_GetListBillForReportTableAdapter USP_GetListBillForReportTableAdapter;
     }
 }

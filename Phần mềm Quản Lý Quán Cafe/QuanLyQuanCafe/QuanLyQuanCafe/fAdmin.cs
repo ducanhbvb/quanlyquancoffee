@@ -1,4 +1,5 @@
-﻿using QuanLyQuanCafe.DAO;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using QuanLyQuanCafe.DAO;
 using QuanLyQuanCafe.DataSetBaoCaoTableAdapters;
 using QuanLyQuanCafe.DTO;
 using System;
@@ -12,13 +13,16 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace QuanLyQuanCafe
 {
     public partial class fAdmin : Form
     {
         BindingSource foodList = new BindingSource();
-
+        BindingSource categoryList = new BindingSource();
+        BindingSource tableList = new BindingSource();
+        
         BindingSource accountList = new BindingSource();
 
         public Account loginAccount;
@@ -41,14 +45,19 @@ namespace QuanLyQuanCafe
         void LoadData()
         {
             dtgvFood.DataSource = foodList;
+            dtgvCategory.DataSource = categoryList;
+            dtgvTable.DataSource = tableList;
             dtgvAccount.DataSource = accountList;
 
             LoadDateTimePickerBill();
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadListFood();
+            LoadListCategory();
+            LoadTableList();   
             LoadAccount();
             LoadCategoryIntoCombobox(cbFoodCategory);
             AddFoodBinding();
+            AddTableBinding();
             AddAccountBinding();
         }
 
@@ -80,6 +89,13 @@ namespace QuanLyQuanCafe
             txbFoodID.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "ID", true, DataSourceUpdateMode.Never));
             nmFoodPrice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "Price", true, DataSourceUpdateMode.Never));
         }
+        void AddTableBinding()
+        {
+            txbTableName.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            txbTableID.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            cbTableStatus.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Status", true, DataSourceUpdateMode.Never));
+            //cbTableStatus.Text = 
+        }
 
         void LoadCategoryIntoCombobox(ComboBox cb)
         {
@@ -90,7 +106,16 @@ namespace QuanLyQuanCafe
         {
             foodList.DataSource = FoodDAO.Instance.GetListFood();
         }
+        void LoadListCategory()
+        {
+            categoryList.DataSource = CategoryDAO.Instance.GetListCategory();
+        }
 
+        
+        void LoadTableList()
+        {
+            tableList.DataSource = TableDAO.Instance.LoadTableList();
+        }
         void AddAccount(string userName, string displayName, int type)
         {
             if (AccountDAO.Instance.InsertAccount(userName, displayName, type))
@@ -312,6 +337,13 @@ namespace QuanLyQuanCafe
             remove { updateFood -= value; }
         }
 
+        private event EventHandler insertTable;
+        public event EventHandler InsertTable
+        {
+            add { insertTable += value; }
+            remove { insertTable -= value; }
+        }
+
         #endregion              
 
         private void btnFristBillPage_Click(object sender, EventArgs e)
@@ -359,17 +391,78 @@ namespace QuanLyQuanCafe
 
         private void fAdmin_Load(object sender, EventArgs e)
         {
-            DateTime date = DateTime.Now.AddDays(-1);
-            DateTime abc = DateTime.Now;
+            //DateTime date = DateTime.Now.AddDays(-1);
+            //DateTime abc = DateTime.Now;
             // TODO: This line of code loads data into the 'QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport' table. You can move, or remove it, as needed.
-            this.USP_GetListBillByDateForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport, date, abc);
+            //this.USP_GetListBillByDateForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport, date, abc);
             //this.USP_GetListBillForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport, date, dtpkToDate.Value);
 
             //this.rpViewer.RefreshReport();
         }
-        
-     
 
- 
+        private void btn_In_Bao_cao_Click(object sender, EventArgs e)
+        {
+            String checkIn = dtpkFromDate.Value.ToString("yyyyMMdd");
+            String checkOut = dtpkToDate.Value.ToString("yyyyMMdd");
+            string query = string.Format("SELECT t.name TenBan, b.totalPrice TongTien, DateCheckIn GioVao, DateCheckOut GioRa, discount Discount FROM dbo.Bill AS b,dbo.TableFood AS t WHERE CONVERT(nvarchar(8), DateCheckIn, 112) >= " + checkIn+ " AND CONVERT(nvarchar(8), DateCheckOut, 112) <= " + checkOut +" AND b.status = 1 AND t.id = b.idTable");
+            
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+             
+            rptBaoCao baocao= new rptBaoCao();
+            baocao.SetDataSource(data);
+            fBaoCao f = new fBaoCao();
+            f.crystalReportViewer2.ReportSource = baocao;
+            f.ShowDialog();
+            //SqlDataAdapter adapter = new SqlDataAdapter(command);
+        }
+
+        private void btnShowCategory_Click(object sender, EventArgs e)
+        {
+            LoadListCategory();
+        }
+
+        private void btnShowTable_Click(object sender, EventArgs e)
+        {
+            LoadTableList();
+        }
+
+        private void btnAddTable_Click(object sender, EventArgs e)
+        {
+            //InsertTable
+
+            string name = txbTableName.Text;
+            string status = cbTableStatus.Text;
+            
+
+            if (TableDAO.Instance.InsertTable(name, status))
+            {
+                MessageBox.Show("Thêm bàn thành công");
+                LoadTableList();
+                if (insertTable != null)
+                    insertTable(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm thức ăn");
+            }
+        }
+
+        private void btnDeleteTable_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng chưa phát triển xong");
+            //int id = Convert.ToInt32(txbFoodID.Text);
+
+            //if (FoodDAO.Instance.DeleteFood(id))
+            //{
+            //    MessageBox.Show("Xóa món thành công");
+            //    LoadListFood();
+            //    if (deleteFood != null)
+            //        deleteFood(this, new EventArgs());
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Có lỗi khi xóa thức ăn");
+            //}
+        }
     }
 }

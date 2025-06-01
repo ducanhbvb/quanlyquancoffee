@@ -225,7 +225,9 @@ namespace QuanLyQuanCafe
             {
                 BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, count);
             }
+            TableDAO.Instance.ChangeTableStatus(table.ID, "Sử dụng");
 
+           
             ShowBill(table.ID);
 
             LoadTable();
@@ -233,6 +235,12 @@ namespace QuanLyQuanCafe
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             Table table = lsvBill.Tag as Table;
+            if (table == null)
+            {
+                MessageBox.Show(string.Format("bàn bạn chọn chưa có gọi đồ"));
+                return;
+            }
+                
 
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int discount = (int)nmDisCount.Value;
@@ -246,7 +254,7 @@ namespace QuanLyQuanCafe
                 {
                     BillDAO.Instance.CheckOut(idBill, discount, (float)finalTotalPrice);
                     ShowBill(table.ID);
-
+                    TableDAO.Instance.ChangeTableStatus(table.ID, "Trống");
                     LoadTable();
                 }
             }
@@ -260,13 +268,18 @@ namespace QuanLyQuanCafe
             if (MessageBox.Show(string.Format("Bạn có thật sự muốn chuyển bàn {0} qua bàn {1}", (lsvBill.Tag as Table).Name, (cbSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 TableDAO.Instance.SwitchTable(id1, id2);
-
+                TableDAO.Instance.ChangeTableStatus(id1, "Trống");
+                TableDAO.Instance.ChangeTableStatus(id2, "Sử dụng");
                 LoadTable();
             }
         }
 
-        #endregion        
 
+        #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
     }
 }

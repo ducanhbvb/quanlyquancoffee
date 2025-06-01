@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyQuanCafe.DAO
 {
@@ -27,7 +28,11 @@ namespace QuanLyQuanCafe.DAO
         {
             DataProvider.Instance.ExecuteQuery("USP_SwitchTabel @idTable1 , @idTabel2", new object[]{id1, id2});
         }
-
+        public void ChangeTableStatus(int idTable, string status)
+        {
+            DataProvider.Instance.ExecuteQuery("USP_ChangeTableStatus @idTable , @status", new object[] { idTable, status });
+        }
+        
         public List<Table> LoadTableList()
         {
             List<Table> tableList = new List<Table>();
@@ -41,6 +46,23 @@ namespace QuanLyQuanCafe.DAO
             }
 
             return tableList;
+        }
+        public bool InsertTable(string name, string status)
+        {
+            string query = string.Format("INSERT dbo.TableFood ( name, status )VALUES  ( N'{0}', N'{1}')", name, status);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteTable(int idTable)
+        {
+            //BillInfoDAO.Instance.DeleteBillInfoByFoodID(idFood);
+            BillDAO.Instance.delte
+            string query = string.Format("Delete Food where id = {0}", idFood);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
         }
     }
 }

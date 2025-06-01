@@ -279,7 +279,7 @@ namespace QuanLyQuanCafe {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class tblBaoCaoDataTable : global::System.Data.TypedTableBase<tblBaoCaoRow> {
             
-            private global::System.Data.DataColumn columnMaHD;
+            private global::System.Data.DataColumn columnTenBan;
             
             private global::System.Data.DataColumn columnTongTien;
             
@@ -324,9 +324,9 @@ namespace QuanLyQuanCafe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MaHDColumn {
+            public global::System.Data.DataColumn TenBanColumn {
                 get {
-                    return this.columnMaHD;
+                    return this.columnTenBan;
                 }
             }
             
@@ -399,10 +399,10 @@ namespace QuanLyQuanCafe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblBaoCaoRow AddtblBaoCaoRow(string MaHD, double TongTien, System.DateTime GioVao, System.DateTime GioRa, short Discount) {
+            public tblBaoCaoRow AddtblBaoCaoRow(string TenBan, decimal TongTien, System.DateTime GioVao, System.DateTime GioRa, short Discount) {
                 tblBaoCaoRow rowtblBaoCaoRow = ((tblBaoCaoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MaHD,
+                        TenBan,
                         TongTien,
                         GioVao,
                         GioRa,
@@ -429,7 +429,7 @@ namespace QuanLyQuanCafe {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnMaHD = base.Columns["MaHD"];
+                this.columnTenBan = base.Columns["TenBan"];
                 this.columnTongTien = base.Columns["TongTien"];
                 this.columnGioVao = base.Columns["GioVao"];
                 this.columnGioRa = base.Columns["GioRa"];
@@ -439,9 +439,9 @@ namespace QuanLyQuanCafe {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnMaHD = new global::System.Data.DataColumn("MaHD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaHD);
-                this.columnTongTien = new global::System.Data.DataColumn("TongTien", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnTenBan = new global::System.Data.DataColumn("TenBan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenBan);
+                this.columnTongTien = new global::System.Data.DataColumn("TongTien", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongTien);
                 this.columnGioVao = new global::System.Data.DataColumn("GioVao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGioVao);
@@ -591,26 +591,26 @@ namespace QuanLyQuanCafe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string MaHD {
+            public string TenBan {
                 get {
                     try {
-                        return ((string)(this[this.tabletblBaoCao.MaHDColumn]));
+                        return ((string)(this[this.tabletblBaoCao.TenBanColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MaHD\' in table \'tblBaoCao\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenBan\' in table \'tblBaoCao\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblBaoCao.MaHDColumn] = value;
+                    this[this.tabletblBaoCao.TenBanColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double TongTien {
+            public decimal TongTien {
                 get {
                     try {
-                        return ((double)(this[this.tabletblBaoCao.TongTienColumn]));
+                        return ((decimal)(this[this.tabletblBaoCao.TongTienColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TongTien\' in table \'tblBaoCao\' is DBNull.", e);
@@ -671,14 +671,14 @@ namespace QuanLyQuanCafe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMaHDNull() {
-                return this.IsNull(this.tabletblBaoCao.MaHDColumn);
+            public bool IsTenBanNull() {
+                return this.IsNull(this.tabletblBaoCao.TenBanColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMaHDNull() {
-                this[this.tabletblBaoCao.MaHDColumn] = global::System.Convert.DBNull;
+            public void SetTenBanNull() {
+                this[this.tabletblBaoCao.TenBanColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -9,17 +9,17 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="BaoCaoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="BaoCaoDataSet" msprop:Generator_DataSetName="BaoCaoDataSet">
+  <xs:element name="BaoCaoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="BaoCaoDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BaoCaoDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblBaoCao" msprop:Generator_RowEvHandlerName="tblBaoCaoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblBaoCaoRowDeleted" msprop:Generator_RowDeletingName="tblBaoCaoRowDeleting" msprop:Generator_RowEvArgName="tblBaoCaoRowChangeEvent" msprop:Generator_TablePropName="tblBaoCao" msprop:Generator_RowChangedName="tblBaoCaoRowChanged" msprop:Generator_RowChangingName="tblBaoCaoRowChanging" msprop:Generator_TableClassName="tblBaoCaoDataTable" msprop:Generator_RowClassName="tblBaoCaoRow" msprop:Generator_TableVarName="tabletblBaoCao" msprop:Generator_UserTableName="tblBaoCao">
+        <xs:element name="tblBaoCao" msprop:Generator_RowClassName="tblBaoCaoRow" msprop:Generator_RowEvHandlerName="tblBaoCaoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblBaoCaoRowDeleted" msprop:Generator_RowDeletingName="tblBaoCaoRowDeleting" msprop:Generator_RowEvArgName="tblBaoCaoRowChangeEvent" msprop:Generator_TablePropName="tblBaoCao" msprop:Generator_RowChangedName="tblBaoCaoRowChanged" msprop:Generator_UserTableName="tblBaoCao" msprop:Generator_RowChangingName="tblBaoCaoRowChanging" msprop:Generator_TableClassName="tblBaoCaoDataTable" msprop:Generator_TableVarName="tabletblBaoCao">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaHD" msprop:Generator_ColumnPropNameInRow="MaHD" msprop:Generator_ColumnPropNameInTable="MaHDColumn" msprop:Generator_ColumnVarNameInTable="columnMaHD" msprop:Generator_UserColumnName="MaHD" type="xs:string" minOccurs="0" />
-              <xs:element name="TongTien" msprop:Generator_ColumnPropNameInRow="TongTien" msprop:Generator_ColumnPropNameInTable="TongTienColumn" msprop:Generator_ColumnVarNameInTable="columnTongTien" msprop:Generator_UserColumnName="TongTien" type="xs:double" minOccurs="0" />
-              <xs:element name="GioVao" msprop:Generator_ColumnPropNameInRow="GioVao" msprop:Generator_ColumnPropNameInTable="GioVaoColumn" msprop:Generator_ColumnVarNameInTable="columnGioVao" msprop:Generator_UserColumnName="GioVao" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="GioRa" msprop:Generator_ColumnPropNameInRow="GioRa" msprop:Generator_ColumnPropNameInTable="GioRaColumn" msprop:Generator_ColumnVarNameInTable="columnGioRa" msprop:Generator_UserColumnName="GioRa" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Discount" msprop:Generator_ColumnPropNameInRow="Discount" msprop:Generator_ColumnPropNameInTable="DiscountColumn" msprop:Generator_ColumnVarNameInTable="columnDiscount" msprop:Generator_UserColumnName="Discount" type="xs:short" minOccurs="0" />
+              <xs:element name="TenBan" msprop:Generator_UserColumnName="TenBan" msprop:Generator_ColumnPropNameInTable="TenBanColumn" msprop:Generator_ColumnPropNameInRow="TenBan" msprop:Generator_ColumnVarNameInTable="columnTenBan" type="xs:string" minOccurs="0" />
+              <xs:element name="TongTien" msprop:Generator_UserColumnName="TongTien" msprop:Generator_ColumnPropNameInTable="TongTienColumn" msprop:Generator_ColumnPropNameInRow="TongTien" msprop:Generator_ColumnVarNameInTable="columnTongTien" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GioVao" msprop:Generator_UserColumnName="GioVao" msprop:Generator_ColumnPropNameInTable="GioVaoColumn" msprop:Generator_ColumnPropNameInRow="GioVao" msprop:Generator_ColumnVarNameInTable="columnGioVao" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GioRa" msprop:Generator_UserColumnName="GioRa" msprop:Generator_ColumnPropNameInTable="GioRaColumn" msprop:Generator_ColumnPropNameInRow="GioRa" msprop:Generator_ColumnVarNameInTable="columnGioRa" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Discount" msprop:Generator_UserColumnName="Discount" msprop:Generator_ColumnPropNameInTable="DiscountColumn" msprop:Generator_ColumnPropNameInRow="Discount" msprop:Generator_ColumnVarNameInTable="columnDiscount" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -75,5 +75,9 @@ namespace QuanLyQuanCafe.DAO
                 return 1;
             }
         }
+        public void DeleteBillInfoByTableID(int id)
+        {
+            DataProvider.Instance.ExecuteQuery("delete dbo.Bill WHERE idTable = " + id);
+        }
     }
 }
