@@ -27,9 +27,13 @@ namespace QuanLyQuanCafe
             {
                 Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
                 fTableManager f = new fTableManager(loginAccount);
+                string role= loginAccount.Type == 1 ? "Admin": "Nhân Viên";
+                MessageBox.Show(string.Format("Chào mừng {0} {1} đăng nhập thành công", role, loginAccount.DisplayName));
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
+                
+                
             }
             else
             {
@@ -53,6 +57,11 @@ namespace QuanLyQuanCafe
             {
                 e.Cancel = true;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

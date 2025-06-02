@@ -244,8 +244,8 @@ namespace QuanLyQuanCafe
 
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int discount = (int)nmDisCount.Value;
-
-            double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0]);
+           
+            double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0].Replace(".", ""));
             double finalTotalPrice = totalPrice - (totalPrice/100)*discount;
 
             if (idBill != -1)
@@ -279,6 +279,30 @@ namespace QuanLyQuanCafe
 
         private void button1_Click(object sender, EventArgs e)
         {
+            LoadTable();
+        }
+
+        private void btn_datBan_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;
+            if (table == null)
+            {
+                MessageBox.Show(string.Format("Vui lòng chọn bàn"));
+                return;
+            }
+            if (table.Status != "Trống"&& table.Status != "Bàn đã đặt")
+            {
+                MessageBox.Show(string.Format("{0} bạn chọn hiện đã được sử dụng", table.Name));
+                return;
+            }
+            else if (table.Status == "Bàn đã đặt")
+            {
+                TableDAO.Instance.ChangeTableStatus(table.ID, "Trống");
+            }
+            else
+            {
+                TableDAO.Instance.ChangeTableStatus(table.ID, "Bàn đã đặt");
+            }
             LoadTable();
         }
     }

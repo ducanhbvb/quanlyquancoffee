@@ -43,6 +43,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.txbTotalPrice = new System.Windows.Forms.TextBox();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.btnSwitchTable = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_datBan = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,8 +79,8 @@
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.adminToolStripMenuItem.Text = "Quản lý";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // chứcNăngToolStripMenuItem
@@ -88,8 +89,8 @@
             this.thanhToánToolStripMenuItem,
             this.thêmMónToolStripMenuItem});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.chứcNăngToolStripMenuItem.Text = "Chức năng";
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.chứcNăngToolStripMenuItem.Text = "Nhân viên order";
             // 
             // thanhToánToolStripMenuItem
             // 
@@ -104,7 +105,7 @@
             this.thêmMónToolStripMenuItem.Name = "thêmMónToolStripMenuItem";
             this.thêmMónToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.thêmMónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.thêmMónToolStripMenuItem.Text = "Thêm món";
+            this.thêmMónToolStripMenuItem.Text = "Order";
             this.thêmMónToolStripMenuItem.Click += new System.EventHandler(this.thêmMónToolStripMenuItem_Click);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
@@ -135,11 +136,12 @@
             this.panel2.Controls.Add(this.lsvBill);
             this.panel2.Location = new System.Drawing.Point(447, 85);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(338, 315);
+            this.panel2.Size = new System.Drawing.Size(338, 305);
             this.panel2.TabIndex = 2;
             // 
             // lsvBill
             // 
+            this.lsvBill.BackColor = System.Drawing.Color.Honeydew;
             this.lsvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -149,7 +151,7 @@
             this.lsvBill.HideSelection = false;
             this.lsvBill.Location = new System.Drawing.Point(3, 3);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(332, 309);
+            this.lsvBill.Size = new System.Drawing.Size(332, 298);
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
@@ -175,16 +177,28 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel3.Controls.Add(this.btn_datBan);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.txbTotalPrice);
             this.panel3.Controls.Add(this.cbSwitchTable);
             this.panel3.Controls.Add(this.btnSwitchTable);
             this.panel3.Controls.Add(this.nmDisCount);
             this.panel3.Controls.Add(this.btnCheckOut);
-            this.panel3.Location = new System.Drawing.Point(447, 406);
+            this.panel3.Location = new System.Drawing.Point(447, 396);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(338, 52);
+            this.panel3.Size = new System.Drawing.Size(338, 62);
             this.panel3.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(84, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 26);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Table Sate";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txbTotalPrice
             // 
@@ -201,7 +215,7 @@
             // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(3, 28);
+            this.cbSwitchTable.Location = new System.Drawing.Point(3, 32);
             this.cbSwitchTable.Name = "cbSwitchTable";
             this.cbSwitchTable.Size = new System.Drawing.Size(75, 21);
             this.cbSwitchTable.TabIndex = 6;
@@ -218,7 +232,7 @@
             // 
             // nmDisCount
             // 
-            this.nmDisCount.Location = new System.Drawing.Point(164, 29);
+            this.nmDisCount.Location = new System.Drawing.Point(164, 33);
             this.nmDisCount.Name = "nmDisCount";
             this.nmDisCount.Size = new System.Drawing.Size(90, 20);
             this.nmDisCount.TabIndex = 4;
@@ -236,6 +250,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel4.Controls.Add(this.nmFoodCount);
             this.panel4.Controls.Add(this.btnAddFood);
             this.panel4.Controls.Add(this.cbFood);
@@ -268,7 +283,7 @@
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(75, 46);
             this.btnAddFood.TabIndex = 2;
-            this.btnAddFood.Text = "Thêm món";
+            this.btnAddFood.Text = "Order";
             this.btnAddFood.UseVisualStyleBackColor = true;
             this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
@@ -292,25 +307,27 @@
             // flpTable
             // 
             this.flpTable.AutoScroll = true;
+            this.flpTable.BackColor = System.Drawing.Color.LightSeaGreen;
             this.flpTable.Location = new System.Drawing.Point(12, 30);
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(429, 428);
             this.flpTable.TabIndex = 5;
             // 
-            // button1
+            // btn_datBan
             // 
-            this.button1.Location = new System.Drawing.Point(84, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Table Sate";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_datBan.Location = new System.Drawing.Point(84, 30);
+            this.btn_datBan.Name = "btn_datBan";
+            this.btn_datBan.Size = new System.Drawing.Size(75, 26);
+            this.btn_datBan.TabIndex = 9;
+            this.btn_datBan.Text = "Đặt Bàn";
+            this.btn_datBan.UseVisualStyleBackColor = true;
+            this.btn_datBan.Click += new System.EventHandler(this.btn_datBan_Click);
             // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(797, 470);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
@@ -363,5 +380,6 @@
         private System.Windows.Forms.ToolStripMenuItem thanhToánToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thêmMónToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_datBan;
     }
 }

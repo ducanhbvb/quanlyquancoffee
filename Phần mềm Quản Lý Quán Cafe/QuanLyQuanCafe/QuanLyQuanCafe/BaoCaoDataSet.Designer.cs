@@ -399,7 +399,7 @@ namespace QuanLyQuanCafe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblBaoCaoRow AddtblBaoCaoRow(string TenBan, decimal TongTien, System.DateTime GioVao, System.DateTime GioRa, short Discount) {
+            public tblBaoCaoRow AddtblBaoCaoRow(string TenBan, decimal TongTien, System.DateTimeOffset GioVao, System.DateTime GioRa, short Discount) {
                 tblBaoCaoRow rowtblBaoCaoRow = ((tblBaoCaoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TenBan,
@@ -443,7 +443,7 @@ namespace QuanLyQuanCafe {
                 base.Columns.Add(this.columnTenBan);
                 this.columnTongTien = new global::System.Data.DataColumn("TongTien", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongTien);
-                this.columnGioVao = new global::System.Data.DataColumn("GioVao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnGioVao = new global::System.Data.DataColumn("GioVao", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGioVao);
                 this.columnGioRa = new global::System.Data.DataColumn("GioRa", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGioRa);
@@ -623,10 +623,10 @@ namespace QuanLyQuanCafe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime GioVao {
+            public System.DateTimeOffset GioVao {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabletblBaoCao.GioVaoColumn]));
+                        return ((global::System.DateTimeOffset)(this[this.tabletblBaoCao.GioVaoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'GioVao\' in table \'tblBaoCao\' is DBNull.", e);

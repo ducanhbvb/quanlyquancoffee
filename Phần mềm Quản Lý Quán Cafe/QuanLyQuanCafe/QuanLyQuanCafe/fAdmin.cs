@@ -336,14 +336,25 @@ namespace QuanLyQuanCafe
             add { updateFood += value; }
             remove { updateFood -= value; }
         }
-
+        private event EventHandler updateTable;
+        public event EventHandler UpdateTable
+        {
+            add { updateTable += value; }
+            remove { updateTable -= value; }
+        }
+        
         private event EventHandler insertTable;
         public event EventHandler InsertTable
         {
             add { insertTable += value; }
             remove { insertTable -= value; }
         }
-
+        private event EventHandler deleteTable;
+        public event EventHandler DeleteTable
+        {
+            add { deleteTable += value; }
+            remove { deleteTable -= value; }
+        }
         #endregion              
 
         private void btnFristBillPage_Click(object sender, EventArgs e)
@@ -449,20 +460,39 @@ namespace QuanLyQuanCafe
 
         private void btnDeleteTable_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng chưa phát triển xong");
-            //int id = Convert.ToInt32(txbFoodID.Text);
+            //MessageBox.Show("Chức năng chưa phát triển xong");
+            int id = Convert.ToInt32(txbTableID.Text);
 
-            //if (FoodDAO.Instance.DeleteFood(id))
-            //{
-            //    MessageBox.Show("Xóa món thành công");
-            //    LoadListFood();
-            //    if (deleteFood != null)
-            //        deleteFood(this, new EventArgs());
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Có lỗi khi xóa thức ăn");
-            //}
+            if (TableDAO.Instance.DeleteTable(id))
+            {
+                MessageBox.Show("Xóa bàn thành công");
+                LoadTableList();
+                if (deleteTable != null)
+                    deleteTable(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa bàn");
+            }
+        }
+
+        private void btnEditTable_Click(object sender, EventArgs e)
+        {
+            
+            string name = txbTableName.Text;
+            string status = cbTableStatus.Text;
+            int id = Convert.ToInt32(txbTableID.Text);
+            if (TableDAO.Instance.UpdateTable(id, name, status))
+            {
+                MessageBox.Show("Sửa thông tin bàn thành công");
+                LoadTableList();
+                if (updateTable != null)
+                    updateTable(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa thông tin bàn");
+            }
         }
     }
 }

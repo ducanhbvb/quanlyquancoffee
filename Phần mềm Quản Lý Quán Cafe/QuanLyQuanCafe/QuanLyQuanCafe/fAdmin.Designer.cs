@@ -168,6 +168,7 @@
             // 
             // tpAccount
             // 
+            this.tpAccount.BackColor = System.Drawing.Color.LightSeaGreen;
             this.tpAccount.Controls.Add(this.panel23);
             this.tpAccount.Controls.Add(this.panel28);
             this.tpAccount.Controls.Add(this.panel29);
@@ -177,7 +178,6 @@
             this.tpAccount.Size = new System.Drawing.Size(650, 413);
             this.tpAccount.TabIndex = 4;
             this.tpAccount.Text = "Tài khoản";
-            this.tpAccount.UseVisualStyleBackColor = true;
             // 
             // panel23
             // 
@@ -352,6 +352,7 @@
             // 
             // tpTable
             // 
+            this.tpTable.BackColor = System.Drawing.Color.LightSeaGreen;
             this.tpTable.Controls.Add(this.panel11);
             this.tpTable.Controls.Add(this.panel19);
             this.tpTable.Controls.Add(this.panel20);
@@ -361,7 +362,6 @@
             this.tpTable.Size = new System.Drawing.Size(650, 413);
             this.tpTable.TabIndex = 3;
             this.tpTable.Text = "Bàn ăn";
-            this.tpTable.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
@@ -485,6 +485,7 @@
             this.btnEditTable.TabIndex = 2;
             this.btnEditTable.Text = "Sửa";
             this.btnEditTable.UseVisualStyleBackColor = true;
+            this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
             // 
             // btnDeleteTable
             // 
@@ -524,6 +525,7 @@
             // 
             // tbFoodCategory
             // 
+            this.tbFoodCategory.BackColor = System.Drawing.Color.LightSeaGreen;
             this.tbFoodCategory.Controls.Add(this.panel12);
             this.tbFoodCategory.Controls.Add(this.panel17);
             this.tbFoodCategory.Controls.Add(this.panel18);
@@ -533,7 +535,6 @@
             this.tbFoodCategory.Size = new System.Drawing.Size(650, 413);
             this.tbFoodCategory.TabIndex = 2;
             this.tbFoodCategory.Text = "Danh mục";
-            this.tbFoodCategory.UseVisualStyleBackColor = true;
             // 
             // panel12
             // 
@@ -677,6 +678,7 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel6.Controls.Add(this.txbSearchFoodName);
             this.panel6.Controls.Add(this.btnSearchFood);
             this.panel6.Location = new System.Drawing.Point(361, 3);
@@ -703,6 +705,7 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel5.Controls.Add(this.panel10);
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Controls.Add(this.panel8);
@@ -826,6 +829,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel4.Controls.Add(this.btnShowFood);
             this.panel4.Controls.Add(this.btnEditFood);
             this.panel4.Controls.Add(this.btnDeleteFood);
@@ -1052,6 +1056,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.ClientSize = new System.Drawing.Size(674, 463);
             this.Controls.Add(this.tcAdmin);
             this.Name = "fAdmin";
